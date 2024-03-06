@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <h2>home</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ratione,
-      molestiae dolores magnam illo, dicta eum unde at nisi similique et
-      laudantium. Corporis atque laboriosam ab quasi debitis, saepe eos!
-    </p>
-  </div>
+  <h1>homepage</h1>
 </template>
 
 <script setup></script>
