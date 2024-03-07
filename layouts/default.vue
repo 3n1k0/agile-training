@@ -7,7 +7,7 @@
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/what-is-agile">What is Agile?</NuxtLink></li>
         <li><NuxtLink to="/what-is-scrum">What is Scrum?</NuxtLink></li>
-        <li><NuxtLink to="/blog/blogpost" class="btn">Blog</NuxtLink></li>
+        <li><NuxtLink to="/blog" class="btn">Blog</NuxtLink></li>
       </ul>
     </nav>
   </header>
