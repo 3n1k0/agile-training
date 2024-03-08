@@ -2,15 +2,16 @@ export function transformBlogPosts(data) {
   return data.items.map((item) => {
     const {
       sys: { id },
-      fields: { title, body, date, featuredImage },
+      fields: { title, body, date, slug, featuredImage },
       metadata: { tags },
     } = item;
 
-    const featuredImageId = featuredImage.sys.id;
+    const featuredImageId = featuredImage?.sys?.id;
     const featuredImageData = data.includes.Asset.find(
       (asset) => asset.sys.id === featuredImageId
     );
-    const featuredImageURL = featuredImageData.fields.file.url;
+    const featuredImageURL =
+      featuredImageData?.fields.file.url || "https://picsum.photos/400/370";
 
     const bodyText = body.content
       .filter((node) => node.nodeType === "paragraph")
@@ -26,6 +27,7 @@ export function transformBlogPosts(data) {
       date,
       tags,
       featuredImageURL,
+      slug,
     };
   });
 }

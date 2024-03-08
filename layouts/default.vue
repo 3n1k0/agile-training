@@ -1,28 +1,50 @@
 <template>
   <header class="shadow-sm bg-white">
-    <nav class="container mx-auto p-4 flex justify-between">
-      <NuxtLink class="font-bold" to="/resources">Scrum Dojo</NuxtLink>
-
-      <ul class="flex gap-4">
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/what-is-agile">What is Agile?</NuxtLink></li>
-        <li><NuxtLink to="/what-is-scrum">What is Scrum?</NuxtLink></li>
-        <li><NuxtLink to="/blog" class="btn">Blog</NuxtLink></li>
-      </ul>
-    </nav>
+    <Navigation />
   </header>
 
-  <div class="container mx-auto p-4">
-    <slot />
-  </div>
+  <div class="app-container">
+    <div class="container mx-auto p-4">
+      <slot />
+    </div>
 
-  <footer class="container mx-auto p-4 flex justify-between border-t-2">
-    this is the footer
-  </footer>
+    <AppFooter />
+  </div>
 </template>
 
 <style scoped>
-.router-link-exact-active {
+.logo {
+  color: #007bff;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.active {
   color: pink;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.app-container {
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 </style>

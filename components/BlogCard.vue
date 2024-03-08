@@ -15,9 +15,9 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import { defineProps } from "vue";
 
-const router = useRouter();
 const props = defineProps({
   post: {
     type: Object,
@@ -25,12 +25,10 @@ const props = defineProps({
   },
 });
 
+const router = useRouter();
+
 const navigateToPost = () => {
-  const sanitizedTitle = props.post.title
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
-  router.push(`/blog/${sanitizedTitle}`);
+  return router.push(`/blog/${props.post.slug}`);
 };
 
 const truncateText = (text, length) => {
@@ -49,6 +47,12 @@ const truncateText = (text, length) => {
   overflow: hidden;
   margin-bottom: 20px;
   width: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
 }
 
 .image-container {
