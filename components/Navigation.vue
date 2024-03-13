@@ -1,7 +1,7 @@
 <template>
   <nav class="container mx-auto p-4 flex justify-between items-center">
     <div class="logo font-bold text-xl">
-      <NuxtLink to="/">Agile Training</NuxtLink>
+      <NuxtLink to="/">Agile Mindset Mastery</NuxtLink>
     </div>
     <ul class="flex gap-4">
       <li>

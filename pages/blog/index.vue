@@ -1,6 +1,5 @@
 <template>
   <div class="blog-list">
-    <h2>All blog posts</h2>
     <div v-if="isLoading" class="loading">
       <p>Loading...</p>
     </div>
@@ -33,6 +32,8 @@ onMounted(async () => {
 <style scoped>
 .blog-list {
   margin: 0 auto;
+  padding: 45px;
+  min-height: 150vh;
 }
 
 h2 {
@@ -53,8 +54,8 @@ h2 {
 <style>
 .blog-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  gap: 35px;
   margin: 0 auto;
 }
 

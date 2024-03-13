@@ -9,7 +9,10 @@
     </div>
     <div class="content">
       <h3 class="title">{{ post.title }}</h3>
-      <p class="body">{{ truncateText(post.body, 150) }}</p>
+      <p class="body">
+        {{ truncateText(post.body, 150) }}
+        <span class="read-more">...read more</span>
+      </p>
     </div>
   </div>
 </template>
@@ -35,7 +38,7 @@ const truncateText = (text, length) => {
   if (text.length <= length) {
     return text;
   }
-  return text.substring(0, length) + "...read more";
+  return text.substring(0, length);
 };
 </script>
 
@@ -50,8 +53,12 @@ const truncateText = (text, length) => {
   transition: transform 0.3s ease;
 }
 
+.read-more {
+  font-weight: bold;
+}
+
 .blog-card:hover {
-  transform: translateY(-5px);
+  filter: brightness(0.75);
 }
 
 .image-container {

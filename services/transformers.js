@@ -11,7 +11,7 @@ export function transformBlogPosts(data) {
       (asset) => asset.sys.id === featuredImageId
     );
     const featuredImageURL =
-      featuredImageData?.fields.file.url || "https://picsum.photos/400/370";
+      featuredImageData?.fields.file.url || "img/placeholder.svg";
 
     const bodyText = body.content
       .filter((node) => node.nodeType === "paragraph")
