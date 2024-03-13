@@ -4,7 +4,7 @@
     <div v-if="isLoading" class="loading">
       <p>Loading...</p>
     </div>
-    <div v-else>
+    <div class="blog-cards" v-else>
       <BlogCard v-for="post in blogPosts" :key="post.id" :post="post" />
     </div>
   </div>
@@ -21,7 +21,6 @@ import { onMounted } from "vue";
 onMounted(async () => {
   try {
     isLoading.value = true;
-    console.log(blogPosts.value);
     blogPosts.value = await fetchBlogPosts();
   } catch (error) {
     console.error("Error fetching blog posts:", error);
@@ -33,7 +32,6 @@ onMounted(async () => {
 
 <style scoped>
 .blog-list {
-  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -49,5 +47,20 @@ h2 {
 
 .loading p {
   font-size: 18px;
+}
+</style>
+
+<style>
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .blog-cards {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

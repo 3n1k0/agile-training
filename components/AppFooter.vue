@@ -4,8 +4,8 @@
       <p>&copy; 2024 Your Website Name. All rights reserved.</p>
       <nav class="footer-nav">
         <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/contact">Contact</router-link>
+        <router-link to="/blog">Blog</router-link>
+        <router-link to="/resources">Resources</router-link>
       </nav>
     </div>
   </footer>
@@ -20,7 +20,6 @@
 }
 
 .footer-content {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -34,7 +33,7 @@
 .footer-nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;
+  margin: 20px;
 }
 
 .footer-nav a:hover {

@@ -9,7 +9,7 @@
     </div>
     <div class="content">
       <h3 class="title">{{ post.title }}</h3>
-      <p class="body">{{ truncateText(post.body, 200) }}</p>
+      <p class="body">{{ truncateText(post.body, 150) }}</p>
     </div>
   </div>
 </template>
@@ -35,18 +35,17 @@ const truncateText = (text, length) => {
   if (text.length <= length) {
     return text;
   }
-  return text.substring(0, length) + "...";
+  return text.substring(0, length) + "...read more";
 };
 </script>
 
 <style scoped>
 .blog-card {
   display: flex;
+  flex-direction: column;
   border: 1px solid #eaeaea;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 20px;
-  width: 400px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -56,13 +55,17 @@ const truncateText = (text, length) => {
 }
 
 .image-container {
-  width: 120px;
+  position: relative;
   overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
 }
 
 .featured-image {
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .content {
