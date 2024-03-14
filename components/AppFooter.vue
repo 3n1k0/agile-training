@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2024 Agile Mindset Mastery. All rights reserved.</p>
+      <p class="m-0">&copy; 2024 Agile Mindset Mastery. All rights reserved.</p>
       <nav class="footer-nav">
         <router-link to="/">Home</router-link>
         <router-link to="/blog">Blog</router-link>
@@ -24,10 +24,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.footer p {
-  margin: 0;
 }
 
 .footer-nav a {

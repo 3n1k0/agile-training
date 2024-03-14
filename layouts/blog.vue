@@ -22,9 +22,3 @@
     class="container mx-auto p-4 flex justify-between border-t-2"
   ></footer>
 </template>
-
-<style scoped>
-.router-link-exact-active {
-  color: green;
-}
-</style>

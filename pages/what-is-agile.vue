@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1>What is Agile?</h1>
+    <h1 class="text-blue-600">What is Agile?</h1>
     <section class="overview">
-      <h2>Overview</h2>
+      <h2 class="text-blue-600">Overview</h2>
       <p>
         Agile is a set of principles and values that guide a flexible and
         adaptive approach to software development. It emphasizes collaboration,
@@ -21,11 +21,11 @@
       </ul>
     </section>
     <section class="benefits">
-      <h2>Benefits of Agile</h2>
+      <h2 class="text-blue-600">Benefits of Agile</h2>
       <div class="benefit">
         <img src="https://picsum.photos/300/200" alt="Collaboration" />
         <div class="benefit-content">
-          <h3>Improved Collaboration</h3>
+          <h3 class="text-blue-600">Improved Collaboration</h3>
           <p>
             Agile encourages close collaboration between team members,
             stakeholders, and customers, leading to better communication and
@@ -36,7 +36,7 @@
       <div class="benefit">
         <img src="https://picsum.photos/300/200" alt="Flexibility" />
         <div class="benefit-content">
-          <h3>Flexibility</h3>
+          <h3 class="text-blue-600">Flexibility</h3>
           <p>
             Agile methodologies allow for flexibility and adaptability in
             responding to changing requirements, priorities, and market
@@ -65,12 +65,6 @@
   margin: 0 auto;
   padding: 20px;
   color: #333;
-}
-
-h1,
-h2,
-h3 {
-  color: #007bff;
 }
 
 p {

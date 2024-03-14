@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1>What is Scrum?</h1>
+    <h1 class="text-blue-600">What is Scrum?</h1>
     <section class="overview">
-      <h2>Overview</h2>
+      <h2 class="text-blue-600">Overview</h2>
       <p>
         Scrum is a popular Agile framework used for managing complex product
         development. It provides a flexible and iterative approach to project
@@ -18,11 +18,11 @@
       </p>
     </section>
     <section class="benefits">
-      <h2>Benefits of Scrum</h2>
-      <div class="benefit">
+      <h2 class="text-blue-600">Benefits of Scrum</h2>
+      <div class="flex mb-5">
         <img src="https://picsum.photos/300/200" alt="Efficiency" />
         <div class="benefit-content">
-          <h3>Increased Efficiency</h3>
+          <h3 class="text-blue-600">Increased Efficiency</h3>
           <p>
             Scrum promotes collaboration and transparency, leading to improved
             efficiency in project delivery. By breaking work into smaller
@@ -44,7 +44,11 @@
         </div>
       </div>
       <div class="benefit">
-        <img src="https://picsum.photos/300/200" alt="Customer Satisfaction" />
+        <img
+          src="https://picsum.photos/300/200"
+          class="h-48 object-cover rounded-lg mr-5"
+          alt="Customer Satisfaction"
+        />
         <div class="benefit-content">
           <h3>Improved Customer Satisfaction</h3>
           <p>
@@ -66,12 +70,6 @@
   color: #333;
 }
 
-h1,
-h2,
-h3 {
-  color: #007bff;
-}
-
 p {
   line-height: 1.6;
 }
@@ -81,17 +79,8 @@ p {
   margin-bottom: 40px;
 }
 
-.benefit {
-  display: flex;
-  margin-bottom: 20px;
-}
-
 img {
   width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 20px;
 }
 
 .benefit-content {

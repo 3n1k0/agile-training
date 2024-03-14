@@ -1,16 +1,16 @@
 <template>
   <div class="post" v-if="post">
-    <h1 class="title">{{ post.title }}</h1>
-    <div class="content">
+    <h1 class="text-2xl mb-5">{{ post.title }}</h1>
+    <div class="mt-5">
       <p class="body">{{ post.body }}</p>
       <img
         :src="post.featuredImageURL"
         alt="Featured Image"
-        class="featured-image"
+        class="max-w-full h-auto mt-5"
       />
     </div>
   </div>
-  <div v-else class="loading">
+  <div v-else class="text-center mt-12">
     <p>Loading...</p>
   </div>
 </template>
@@ -45,28 +45,8 @@ onMounted(async () => {
   padding: 20px;
 }
 
-.title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.content {
-  margin-top: 20px;
-}
-
 .body {
   font-size: 16px;
   line-height: 1.6;
-}
-
-.featured-image {
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
-}
-
-.loading {
-  text-align: center;
-  margin-top: 50px;
 }
 </style>

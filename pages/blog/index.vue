@@ -40,21 +40,6 @@ onMounted(async () => {
   padding: 45px;
   min-height: 150vh;
 }
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.loading {
-  text-align: center;
-  margin-top: 20px;
-  margin: 0 auto;
-}
-
-.loading p {
-  font-size: 18px;
-}
 </style>
 
 <style>
