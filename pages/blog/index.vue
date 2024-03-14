@@ -1,7 +1,12 @@
 <template>
   <div class="blog-list">
-    <div v-if="isLoading" class="loading">
-      <p>Loading...</p>
+    <div v-if="isLoading" class="flex flex-col justify-center">
+      <p class="text-center w-full">Loading...</p>
+      <img
+        class="loader"
+        src="/img/loader.gif"
+        sizes="200px sm:50px md:100px"
+      />
     </div>
     <div class="blog-cards" v-else>
       <BlogCard v-for="post in blogPosts" :key="post.id" :post="post" />
@@ -44,6 +49,7 @@ h2 {
 .loading {
   text-align: center;
   margin-top: 20px;
+  margin: 0 auto;
 }
 
 .loading p {
@@ -52,6 +58,10 @@ h2 {
 </style>
 
 <style>
+.loader {
+  margin: 0 auto;
+}
+
 .blog-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));

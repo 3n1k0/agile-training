@@ -11,78 +11,73 @@
       </li>
       <li>
         <NuxtLink
-          :class="{ active: $route.path === '/what-is-agile' }"
           to="/what-is-agile"
           >What is Agile?</NuxtLink
+          class="py-2 px-3 text-gray-700 hover:text-gray-900 hidden md:block"
+          to="/"
+          >Home</NuxtLink
         >
-      </li>
-      <li>
         <NuxtLink
+          class="py-2 px-3 text-gray-700 hover:text-gray-900 hidden md:block"
           :class="{ active: $route.path === '/what-is-scrum' }"
           to="/what-is-scrum"
           >What is Scrum?</NuxtLink
         >
-      </li>
-      <li>
         <NuxtLink
+          class="py-2 px-3 text-gray-700 hover:text-gray-900 hidden md:block"
+          :class="{ active: $route.path === '/what-is-agile' }"
+          to="/what-is-agile"
+          >What is Agile?</NuxtLink
+        >
+        <NuxtLink
+          class="py-2 px-3 text-gray-700 hover:text-gray-900 hidden md:block"
           :class="{ active: $route.path === '/resources' }"
           to="/resources"
           >Resources</NuxtLink
         >
-      </li>
-      <li>
         <NuxtLink
+          class="py-2 px-3 text-gray-700 hover:text-gray-900 hidden md:block"
           :class="{ active: $route.path === '/blog' }"
           to="/blog"
-          class="btn"
           >Blog</NuxtLink
         >
-      </li>
-    </ul>
+        <button
+          @click="isOpen = !isOpen"
+          class="text-gray-700 hover:text-gray-900 md:hidden"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div :class="isOpen ? 'block' : 'hidden'" class="md:hidden">
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Home</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Careers</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Blog</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100"
+        >Contact Us</a
+      >
+      <a
+        href="#"
+        class="block py-2 px-4 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+        >Get Started</a
+      >
+    </div>
   </nav>
 </template>
 
-<style scoped>
-.logo {
-  color: #007bff;
-}
-
-.logo a {
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li {
-  display: inline-block;
-}
-
-.active {
-  color: #007bff;
-}
-
-.btn {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.app-container {
-  min-height: calc(100vh - 60px);
-  position: relative;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-</style>
+<script setup>
+const isOpen = ref(false);
+</script>
