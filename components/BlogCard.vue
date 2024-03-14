@@ -1,17 +1,17 @@
 <template>
   <div class="blog-card" @click="navigateToPost">
-    <div class="relative overflow-hidden h-0">
+    <div class="image-container">
       <img
         :src="post.featuredImageURL"
         alt="Featured Image"
-        class="absolute w-full h-full object-cover"
+        class="featured-image"
       />
     </div>
-    <div class="p-4">
-      <h3 class="text-lg mb-2">{{ post.title }}</h3>
-      <p class="text-sm">
+    <div class="content">
+      <h3 class="title">{{ post.title }}</h3>
+      <p class="body">
         {{ truncateText(post.body, 150) }}
-        <span class="font-bold">...read more</span>
+        <span class="read-more">...read more</span>
       </p>
     </div>
   </div>
@@ -53,7 +53,39 @@ const truncateText = (text, length) => {
   transition: transform 0.3s ease;
 }
 
+.read-more {
+  font-weight: bold;
+}
+
 .blog-card:hover {
   filter: brightness(0.75);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.featured-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 15px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.body {
+  font-size: 14px;
+  color: #666;
 }
 </style>
