@@ -1,4 +1,9 @@
 export function transformBlogPosts(data) {
+  if (!data || !data.items || !Array.isArray(data.items)) {
+    console.error("Invalid or empty data received for transformation:", data);
+    return []; // Return an empty array or handle the error situation appropriately
+  }
+
   return data.items.map((item) => {
     const {
       sys: { id },
