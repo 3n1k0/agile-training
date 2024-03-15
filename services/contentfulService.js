@@ -8,7 +8,7 @@ export async function fetchBlogPosts() {
   const runtimeConfig = useRuntimeConfig();
   try {
     const response = await fetch(
-      `https://${runtimeConfig.public.BASE_URL}/spaces/${runtimeConfig.public.CTF_SPACE_ID}/entries?access_token=${runtimeConfig.public.CTF_CDA_ACCESS_TOKEN}`
+      `${runtimeConfig.public.BASE_URL}/spaces/${runtimeConfig.public.CTF_SPACE_ID}/entries?access_token=${runtimeConfig.public.CTF_CDA_ACCESS_TOKEN}`
     );
     let data = await response.json();
     let transformedPost = await transformBlogPosts(data);
@@ -24,7 +24,7 @@ export async function fetchBlogPostById(postId) {
   const runtimeConfig = useRuntimeConfig();
   try {
     const response = await fetch(
-      `https://${runtimeConfig.public.BASE_URL}/spaces/${runtimeConfig.public.CTF_SPACE_ID}/entries/${postId}?access_token=${runtimeConfig.public.CTF_CDA_ACCESS_TOKEN}`
+      `${runtimeConfig.public.BASE_URL}/spaces/${runtimeConfig.public.CTF_SPACE_ID}/entries/${postId}?access_token=${runtimeConfig.public.CTF_CDA_ACCESS_TOKEN}`
     );
     const data = await response.json();
     return data;
@@ -38,7 +38,7 @@ export async function fetchEntryBySlug(slug) {
   const runtimeConfig = useRuntimeConfig();
   const environmentId = "master";
   const contentTypeId = "blogPage";
-  const baseUrl = `https://${runtimeConfig.public.BASE_URL}/spaces/${runtimeConfig.public.CTF_SPACE_ID}/environments/${environmentId}/entries`;
+  const baseUrl = `${runtimeConfig.public.BASE_URL}/spaces/${runtimeConfig.public.CTF_SPACE_ID}/environments/${environmentId}/entries`;
   const query = `?access_token=${
     runtimeConfig.public.CTF_CDA_ACCESS_TOKEN
   }&content_type=${contentTypeId}&fields.slug=${encodeURIComponent(slug)}`;
